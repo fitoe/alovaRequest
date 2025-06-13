@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+  /* --ui-container: 1200px; */
+  --color-primary: #57b878;
+  --color-success: #007c4d;
+  --color-info: #47b78e;
+  --color-secondary: #00b0ec;
+  --ui-text: #000;
+}
+@layer components {
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
