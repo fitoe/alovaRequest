@@ -18,6 +18,9 @@ const alova = createAlova({
 
   responded: {
     onSuccess: async (response) => {
+      console.log('--', '请求结束');
+
+      return response.json()
       console.log('-', response.url)
       if (response.status >= 400) {
         throw new Error(response.statusText)
@@ -33,7 +36,8 @@ const alova = createAlova({
       return json
     },
     onError: (error) => {
-      console.error(error)
+      console.error('请求错误', error)
+      throw new Error(error)
     },
   },
 })
