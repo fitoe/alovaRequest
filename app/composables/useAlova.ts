@@ -11,6 +11,11 @@ const alova = createAlova({
     GET: 0,
   },
   requestAdapter: adapterFetch(),
+
+  async beforeRequest(method) {
+    console.log('请求数据:', method.url);
+  },
+
   responded: {
     onSuccess: async (response) => {
       console.log('-', response.url)
